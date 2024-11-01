@@ -26,7 +26,11 @@ public class UserController {
 		UserEntity user = userService.getUserById(id);
 		return ResponseEntity.ok(user);
 	}
-
+	@GetMapping("/{rut}")
+	public ResponseEntity<UserEntity> getUserById(@PathVariable String rut) {
+		UserEntity user = userService.getUserByRut(rut);
+		return ResponseEntity.ok(user);
+	}
 	@PostMapping("/")
 	public ResponseEntity<UserEntity> saveUser(@RequestBody UserEntity user) {
 		UserEntity userNew = userService.saveUser(user);

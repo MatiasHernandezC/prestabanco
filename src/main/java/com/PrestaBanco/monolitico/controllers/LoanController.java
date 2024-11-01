@@ -20,6 +20,15 @@ public class LoanController {
     	List<LoanEntity> loans = loanService.getLoans();
 		return ResponseEntity.ok(loans);
 	}
+	@GetMapping("/simulate/{loanName}/{loanAmount}/{years}/{interest}")
+	public ResponseEntity<Integer> loanSimulator(@PathVariable String loanName,
+												 @PathVariable int loanAmount,
+												 @PathVariable int years,
+												 @PathVariable double interest) {
+
+		int monthly = (int) loanService.simulateLoanFee(loanName, loanAmount, years, interest, "12345678-9");
+		return ResponseEntity.ok(monthly);
+	}
 
 	@GetMapping("/{id}")
 	public ResponseEntity<LoanEntity> getLoanById(@PathVariable Long id) {

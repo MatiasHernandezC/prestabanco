@@ -10,8 +10,7 @@ import java.util.List;
 
 @Repository
 public interface UserLoanRepository extends JpaRepository<UserLoanEntity, Long> {
-    public UserLoanEntity findByRut(String rut);
-    List<UserLoanEntity> findByCategory(String category);
-    @Query(value = "SELECT * FROM employees WHERE employees.rut = :rut", nativeQuery = true)
-    UserLoanEntity findByRutNativeQuery(@Param("rut") String rut);
+
+    public List<UserLoanEntity> findByUserId(Long id);
+
 }

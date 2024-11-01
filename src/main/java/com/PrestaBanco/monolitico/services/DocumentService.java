@@ -24,10 +24,6 @@ public class DocumentService {
         return documentRepository.findById(id).get();
     }
 
-    public DocumentEntity getDocumentByRut(String rut){
-        return documentRepository.findByRut(rut);
-    }
-
     public DocumentEntity updateDocument(DocumentEntity document) {
         return documentRepository.save(document);
     }

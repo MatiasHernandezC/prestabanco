@@ -25,7 +25,7 @@ public class UserService {
     }
 
     public UserEntity getUserByRut(String rut){
-        return userRepository.findByRut(rut);
+        return userRepository.findByRutNativeQuery(rut);
     }
 
     public UserEntity updateUser(UserEntity user) {

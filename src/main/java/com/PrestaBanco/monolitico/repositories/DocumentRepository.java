@@ -10,8 +10,5 @@ import java.util.List;
 
 @Repository
 public interface DocumentRepository extends JpaRepository<DocumentEntity, Long> {
-    public DocumentEntity findByRut(String rut);
-    List<DocumentEntity> findByCategory(String category);
-    @Query(value = "SELECT * FROM employees WHERE employees.rut = :rut", nativeQuery = true)
-    DocumentEntity findByRutNativeQuery(@Param("rut") String rut);
+    public List<DocumentEntity> findByUserId(Long userId);
 }

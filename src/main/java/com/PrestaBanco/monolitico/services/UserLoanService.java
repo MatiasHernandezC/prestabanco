@@ -24,10 +24,6 @@ public class UserLoanService {
         return userLoanRepository.findById(id).get();
     }
 
-    public UserLoanEntity getUserLoanByRut(String rut){
-        return userLoanRepository.findByRut(rut);
-    }
-
     public UserLoanEntity updateUserLoan(UserLoanEntity userLoan) {
         return userLoanRepository.save(userLoan);
     }
